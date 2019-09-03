@@ -1,0 +1,37 @@
+
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+float updata_balance(string, float, float &balance);
+int main()
+{
+	string command;
+	float  dollars, balance = 10000 ;
+	cout << "exit with 0 " << endl; 
+	cout << "Your balance = " << fixed; 
+	cout << setprecision(2) << balance << endl;
+	do
+	{
+		cout << "Input command(1 or withdraw, 2 deposit) : ";
+	    cin >> command;
+	    cout << "Input amount : ";
+	    cin >> dollars;
+	    updata_balance(command, dollars, balance);
+		cout << "Your balance : " << balance << endl; 
+
+	}while(command != "0");
+
+}
+float updata_balance(string command, float dollars, float &balance)
+{
+	if(command == "1")
+	{
+		balance = balance - dollars;
+	}
+	else
+	{
+		balance = balance + dollars; 
+	}
+	return(balance);
+}
